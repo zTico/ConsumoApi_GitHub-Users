@@ -17,7 +17,7 @@
         <div class="meio">
             <form method="GET">
             <div class="form-group">
-            <label>Seu usúario GitHub</label>
+            <label>Seu usuário GitHub</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="usuario">
             <small id="emailHelp" class="form-text text-muted">Ex: zTico</small>
             <div class="espaco"></div>
