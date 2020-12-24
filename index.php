@@ -27,13 +27,19 @@
     </div>
 
     <?php if(isset($_GET['usuario'])){?>
+        <?php  
+           $link = $arqui_json->login;
+           $link2 = json_encode($link);
+           $link2 = str_replace(array('\'', '"'), '', $link2); 
+           //var_dump($link2);
+        ?>
         <div class="topo2"><h2>Resultado da busca:</h2><div>
         <img src="<?php echo $arqui_json->avatar_url ?>" width="80px"> <br>
         <b>User: </b> <?php echo $arqui_json->login; ?><br>
         <b>id: </b> <?php echo $arqui_json->id; ?><br>
         <b>Nome: </b> <?php echo $arqui_json->name; ?><br>
         <b>Quantidade de repositorio: </b> <?php echo $arqui_json->public_repos; ?><br>
-        <a href="https://github.com/zTico"><b>gitLink:</b><?php echo $arqui_json->html_url; ?></a> <br>
+        <a href='https://github.com/<?php echo $link2?>'><b>gitLink:</b><?php echo $arqui_json->html_url; ?></a> <br>
         <b>Conta criada em: </b> <?php echo $arqui_json->created_at; ?><br>
         <b>Ultima atualização: </b> <?php echo $arqui_json->updated_at; ?><br>
 
