@@ -21,12 +21,19 @@
             <input type="text" class="form-control" aria-describedby="emailHelp" name="usuario">
             <small id="emailHelp" class="form-text text-muted">Ex: zTico</small>
             <div class="espaco"></div>
+            <?php if(isset($_GET['erro'])){?>
+                <div class ="alert alert-danger"> Preencha o campo </div>
+            <?php }?>
             <button type="submit" class="btn btn-primary">Buscar</button>
             </form>
         </div>
     </div>
 
     <?php if(isset($_GET['usuario'])){?>
+            <?php if(empty($_GET['usuario'])){
+            header('Location:index.php?erro=preencha_o _campo');
+            }
+        ?>
         <?php  
            $link = $arqui_json->login;
            $link2 = json_encode($link);
