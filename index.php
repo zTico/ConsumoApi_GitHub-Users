@@ -1,6 +1,5 @@
 <?php if(!empty($_GET['usuario'])){
-    require_once('api_user.php');
-} else echo "";  ?>
+ require_once('api_user.php');}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
